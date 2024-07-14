@@ -17,6 +17,8 @@ export default function CampaignTable(props: { user: any }) {
     const [error, setError] = useState<String | undefined>();
     const [campaignsData, setCampaigns] = useState<ICampaign[]>([]);
 
+    // for demo
+
     interface ICampaign {
         id: String,
         name: String,
@@ -96,7 +98,7 @@ export default function CampaignTable(props: { user: any }) {
         "CREATED": "default",
         "ACTIVE": "secondary",
         "SUCCESS": "success",
-        "FAILED": "danger"
+        "FAIL": "danger"
     }
 
     const [isPending, startTransition] = useTransition();
@@ -155,12 +157,12 @@ export default function CampaignTable(props: { user: any }) {
                                 </TableCell>
                                 <TableCell className="flex flex-row gap-4">
                                     {/* <Rocket fill="primary"> */}
-                                    <Button color="default" onClick={(e) => e.preventDefault()} isDisabled={c.hasPledgedAmount.valueOf()}>
+                                    <Button color="default" onClick={(e) => e.preventDefault()} isDisabled={c.status !== "CREATED"}>
                                         <Link href={`/pledge?email=${props.user.email}&pledgedAmount=${c.pledgedAmount}&pledgeCurrency=${c.pledgeCurrency}&userId=${props.user.id}&campaignId=${c.id}`}>Pledge</Link>
                                     </Button>
                                     {/* </Rocket> */}
                                     <Button color="danger"
-                                        // isDisabled={c.hasPledgedAmount.valueOf()}
+                                        isDisabled={c.status !== "CREATED"}
                                         onClick={() => deleteCampaign(c.id)}>
                                         <Trash2 color="white"></Trash2>
                                     </Button>
