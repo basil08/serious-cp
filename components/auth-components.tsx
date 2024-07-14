@@ -9,7 +9,11 @@ export function SignIn({
     <form
       action={async () => {
         "use server"
-        await signIn(provider)
+        // let options: { callbackUrl: string; email?: string } = {
+        //   callbackUrl: `http://localhost:3000/dashboard`
+        // };
+
+        await signIn(provider);
       }}
     >
       <Button {...props}>Sign In</Button>
@@ -26,7 +30,7 @@ export function SignOut(props: React.ComponentPropsWithRef<typeof Button>) {
       }}
       className="w-full"
     >
-      <Button variant="ghost" className="w-full p-0" {...props}>
+      <Button className="w-full p-0" {...props}>
         Sign Out
       </Button>
     </form>

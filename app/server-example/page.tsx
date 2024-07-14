@@ -20,5 +20,5 @@ export default async function Page() {
       </p>
       <SessionData session={session} />
     </div>
-  )
+  ) 
 }
