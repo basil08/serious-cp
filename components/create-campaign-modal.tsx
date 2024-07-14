@@ -11,7 +11,7 @@ export default function CreateCampaignModal({ user }) {
         <>
             <div className="flex flex-col">
                 <div className="flex flex-row justify-end pb-3">
-                    <Button onPress={onOpen} color="primary">
+                    <Button onPress={onOpen} color="secondary">
                         <PlusIcon></PlusIcon>
                         Add New
                     </Button>

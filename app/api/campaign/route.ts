@@ -1,4 +1,5 @@
 import { PrismaClient, Prisma } from "@prisma/client";
+import { NextRequest } from "next/server";
 
 const prisma = new PrismaClient();
 
@@ -68,10 +69,11 @@ export async function POST(
 }
 
 export async function GET(
-    req: Request
+    req: NextRequest
 ) {
-    const url = new URL(req.url);
-    const searchParams = new URLSearchParams(url.search);
+    // const url = new URL(req.url);
+    // const searchParams = new URLSearchParams(url.search);
+    const searchParams = req.nextUrl.searchParams;
     const userId = searchParams.get("userId");
 
     // console.log("debug, got userid", userId);

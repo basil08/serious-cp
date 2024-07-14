@@ -28,9 +28,12 @@ export function MainNav() {
             height="32"
             className="min-w-8"
           />
+          <span className="font-bold text-lg pl-2">
+            Tendency
+          </span>
         </Button>
       </CustomLink>
-    
+
     </div>
   )
 }

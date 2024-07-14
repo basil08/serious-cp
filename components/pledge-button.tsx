@@ -94,7 +94,7 @@ export default function PledgeButton(props:
                 <p>You are about to lock your funds into the app. This process is required to activate the campaign.</p>
                 <div className="m-3 flex flex-col">
                     <Button className="m-2" onPress={() => createOrder(pledgedAmount, pledgeCurrency)}>Create Order</Button>
-                    <Button className="m-2" color="primary" isDisabled={!showPay} onPress={() => kickStartPayment(orderId, userId, campaignId)}>Pay</Button>
+                    <Button className="m-2" color="secondary" isDisabled={!showPay} onPress={() => kickStartPayment(orderId, userId, campaignId)}>Pay</Button>
                 </div>
             </div>
 
